@@ -8,6 +8,7 @@
     "platforms": ["ios", "android"],
     "version": "1.0.0",
     "orientation": "portrait",
+    "githubUrl": "https://github.com/joeric1028/Technical-Test",
     "icon": "./assets/images/logo-square.png",
     "splash": {
       "image": "./assets/images/logo-square.png",
