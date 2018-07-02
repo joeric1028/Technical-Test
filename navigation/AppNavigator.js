@@ -7,4 +7,7 @@ export default createSwitchNavigator({
   // Read more at https://reactnavigation.org/docs/en/auth-flow.html
   Login: LoginScreen,
   Main: MainTabNavigator,
+},
+{
+  initialRouteName: 'Login'
 });
