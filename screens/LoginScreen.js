@@ -7,7 +7,7 @@ import {
     TextInput,
     View,
     Button,
-    KeyboardAvoidingView 
+    KeyboardAvoidingView,
 } from 'react-native';
 
 export default class LoginScreen extends Component {
@@ -18,6 +18,7 @@ export default class LoginScreen extends Component {
             password: '',
             isShowingEmailError: false,
             isShowingPasswordError: false,
+            isDisabled: false,
             emailWarning: "not correct format for email address",
             passwordWarning: "please use at least 6 - 12 characters",
             emailEmpty: "email address is empty",
@@ -32,14 +33,16 @@ export default class LoginScreen extends Component {
             this.setState({
                 isShowingEmailError: false,
                 emailErrorTemp: "",
-                email: value
+                email: value,
+                isDisabled: false
             });
             
         } else {
             this.setState({
                 isShowingPasswordError: false,
                 passwordErrorTemp: "",
-                password: value
+                password: value,
+                isDisabled: false
             });
         }
     }
@@ -54,44 +57,52 @@ export default class LoginScreen extends Component {
             this.setState({
                 isShowingEmailError: true,
                 emailErrorTemp: this.state.emailEmpty,
+                isDisabled: true
             });
             if (this.state.password == '') {
                 this.setState({
                     isShowingpasswordError: true,
                     passwordErrorTemp: this.state.passwordEmpty,
+                    isDisabled: true
                 });
             } else if (!schema.validate(this.state.password)) {
                 this.setState({
                     isShowingPasswordError: true,
                     passwordErrorTemp: this.state.passwordWarning,
+                    isDisabled: true
                 });
             }
         } else if (this.state.password == '') {
             this.setState({
                 isShowingpasswordError: true,
                 passwordErrorTemp: this.state.passwordEmpty,
+                isDisabled: true
             });
             if (!validator.validate(this.state.email)) {
                 this.setState({
                     isShowingEmailError: true,
                     emailErrorTemp: this.state.emailWarning,
+                    isDisabled: true
                 });
             } 
         } else if (!validator.validate(this.state.email)) {
             this.setState({
                 isShowingEmailError: true,
                 emailErrorTemp: this.state.emailWarning,
+                isDisabled: true
             });
             if (!schema.validate(this.state.password)) {
                 this.setState({
                     isShowingPasswordError: true,
                     passwordErrorTemp: this.state.passwordWarning,
+                    isDisabled: true
                 });
             }
         } else if (!schema.validate(this.state.password)) {
             this.setState({
                 isShowingPasswordError: true,
                 passwordErrorTemp: this.state.passwordWarning,
+                isDisabled: true
             });
         } else if (!this.state.isShowingEmailError && !this.state.isShowingPasswordError) {
             alert("Login Successfully");
@@ -143,11 +154,12 @@ export default class LoginScreen extends Component {
                     </View>
                     <View style={styles.formButtonContainer}>
                         <View style={styles.formButton}>
-                            <Button
-                                onPress={this.handleLogin}
-                                accessibilityLabel='Sign In'
-                                title="Sign In"
-                                color='white'/>
+                                <Button
+                                    onPress={this.handleLogin}
+                                    disabled={this.state.isDisabled}
+                                    accessibilityLabel='Sign In'
+                                    title="Sign In"
+                                    color='white'/>
                         </View>
                     </View>
                 </ScrollView>
