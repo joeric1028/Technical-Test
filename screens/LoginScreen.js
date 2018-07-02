@@ -65,8 +65,6 @@ export default class LoginScreen extends Component {
                     isShowingPasswordError: true,
                     passwordErrorTemp: this.state.passwordWarning,
                 });
-            } else if (!this.state.isShowingEmailError && !this.state.isShowingPasswordError) {
-                alert("Login Successfully");
             }
         } else if (this.state.password == '') {
             this.setState({
@@ -78,9 +76,6 @@ export default class LoginScreen extends Component {
                     isShowingEmailError: true,
                     emailErrorTemp: this.state.emailWarning,
                 });
-                if (this.state.isShowingEmailError && this.state.isShowingPasswordError) {
-                    alert("Login Successfully");
-                }
             } 
         } else if (!validator.validate(this.state.email)) {
             this.setState({
