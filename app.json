@@ -4,11 +4,8 @@
     "description": "A very interesting exam. It is gooood!",
     "slug": "Technical-Test",
     "privacy": "public",
-    "sdkVersion": "32.0.0",
-    "platforms": [
-      "ios",
-      "android"
-    ],
+    "sdkVersion": "33.0.0",
+    "platforms": ["ios", "android"],
     "version": "1.0.1",
     "orientation": "portrait",
     "githubUrl": "https://github.com/joeric1028/Technical-Test",

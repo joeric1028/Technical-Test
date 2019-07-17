@@ -5,11 +5,11 @@
     "start": "expo start"
   },
   "dependencies": {
+    "react-native": "https://github.com/expo/react-native/archive/sdk-33.0.0.tar.gz",
+    "expo": "^33.0.0",
+    "react": "16.8.3",
     "email-validator": "^2.0.4",
-    "expo": "^32.0.0",
     "password-validator": "^4.1.1",
-    "react": "16.5.0",
-    "react-native": "https://github.com/expo/react-native/archive/sdk-32.0.0.tar.gz",
     "react-navigation": "3.3.2"
   }
 }
