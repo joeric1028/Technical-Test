@@ -8,6 +8,8 @@ import {
     View,
     Button,
     KeyboardAvoidingView,
+    Platform,
+    StatusBar
 } from 'react-native';
 
 export default class LoginScreen extends Component {
@@ -19,10 +21,10 @@ export default class LoginScreen extends Component {
             isShowingEmailError: false,
             isShowingPasswordError: false,
             isDisabled: false,
-            emailWarning: "not correct format for email address",
-            passwordWarning: "please use at least 6 - 12 characters",
-            emailEmpty: "email address is empty",
-            passwordEmpty: "password is empty",
+            emailWarning: "Not correct format for email address",
+            passwordWarning: "Please use at least 6 - 12 characters",
+            emailEmpty: "Email address is empty",
+            passwordEmpty: "Password is empty",
             emailErrorTemp: '',
             passwordErrorTemp: ''
         };
@@ -49,7 +51,7 @@ export default class LoginScreen extends Component {
 
     handleLogin = () => {
         var validator = require("email-validator");
-        var passwordValidator = require('password-validator');
+        var passwordValidator = require("password-validator");
         var schema = new passwordValidator();
         schema.is().min(6);
         schema.is().max(12);
@@ -105,13 +107,14 @@ export default class LoginScreen extends Component {
                 isDisabled: true
             });
         } else if (!this.state.isShowingEmailError && !this.state.isShowingPasswordError) {
-            alert("Login Successfully");
+            alert("Login successfully");
         }
     }
 
     render() {
         return (
             <KeyboardAvoidingView style={styles.container} behavior="padding" enabled>
+                <StatusBar barStyle="dark-content" />
                 <ScrollView style={styles.container} contentContainerStyle={styles.contentContainer}>
                     <View style={styles.welcomeContainer}>
                         <Image
@@ -159,7 +162,14 @@ export default class LoginScreen extends Component {
                                     disabled={this.state.isDisabled}
                                     accessibilityLabel='Sign In'
                                     title="Sign In"
-                                    color='white'/>
+                                    {...Platform.select({
+                                        ios: {
+                                            color: 'white'
+                                        },
+                                        android: {
+                                            color: "#714db2"
+                                        }
+                                    })}/>
                         </View>
                     </View>
                 </ScrollView>
