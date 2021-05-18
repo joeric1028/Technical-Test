@@ -4,7 +4,6 @@
     "description": "A very interesting exam. It is gooood!",
     "slug": "Technical-Test",
     "privacy": "public",
-    "sdkVersion": "40.0.0",
     "platforms": [
       "ios",
       "android"
