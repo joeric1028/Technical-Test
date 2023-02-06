@@ -18,7 +18,8 @@
       "backgroundColor": "#ffffff"
     },
     "updates": {
-      "fallbackToCacheTimeout": 0
+      "fallbackToCacheTimeout": 0,
+      "url": "https://u.expo.dev/824d69b0-8123-11e8-808f-3385ec791a81"
     },
     "assetBundlePatterns": [
       "**/*"
@@ -29,6 +30,14 @@
     },
     "android": {
       "package": "ph.joeric1028.technicaltest"
+    },
+    "extra": {
+      "eas": {
+        "projectId": "824d69b0-8123-11e8-808f-3385ec791a81"
+      }
+    },
+    "runtimeVersion": {
+      "policy": "appVersion"
     }
   }
 }
