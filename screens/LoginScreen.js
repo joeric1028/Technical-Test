@@ -113,7 +113,7 @@ export default class LoginScreen extends Component {
 
     render() {
         return (
-            <KeyboardAvoidingView style={styles.container} behavior="padding" enabled>
+            <KeyboardAvoidingView style={styles.container} behavior="height" enabled>
                 <StatusBar barStyle="dark-content" />
                 <ScrollView style={styles.container} contentContainerStyle={styles.contentContainer}>
                     <View style={styles.welcomeContainer}>
@@ -181,7 +181,8 @@ export default class LoginScreen extends Component {
 const styles = StyleSheet.create({
     container: {
         flex: 1,
-        backgroundColor: '#fff'
+        backgroundColor: '#fff',
+        paddingBottom: 30
     },
     contentContainer: {
         paddingTop: 30
