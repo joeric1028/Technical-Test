@@ -8,7 +8,7 @@
       "ios",
       "android"
     ],
-    "version": "1.0.2",
+    "version": "1.0.3",
     "orientation": "portrait",
     "githubUrl": "https://github.com/joeric1028/Technical-Test",
     "icon": "./assets/images/logo-square.png",
@@ -38,6 +38,10 @@
     },
     "runtimeVersion": {
       "policy": "appVersion"
-    }
+    },
+    "plugins": [
+      "expo-asset",
+      "expo-font"
+    ]
   }
 }
